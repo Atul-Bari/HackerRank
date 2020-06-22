@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+
+package say;
+
+service TextToSpeech {
+    //simple GRPC
+    rpc Say(Text) returns(Speech) {}
+    rpc Asr(AsrSpeech) returns(Speech) {}
+    rpc BiAsr(stream Speech) returns(stream Speech) {}
+}
+
+//Variable explaination
+//text : text to translate
+//voiceName : provice voice details (en-IN-Wavenet-D)
+//SsmlVoiceGender : MALE, FEMALE or NEUTRAL voice
+//voiceLanguageCode : en-IN
+//AudioEncoding : MP3, LINEAR16
+//audioSpeechRate : can be 1, 2, 3 ...
+//audioPitch : can be 1, 2, 3 ...
+//googlePollySamespace : which server we are requesting...
+
+
+message Text {
+    string text = 1;
+    string voiceName = 2;
+}
+
+message Speech {
+    bytes audio = 1;
+}
+
+message AsrSpeech {
+        bytes audio = 1;
+        string model = 2;
+}
