@@ -3,6 +3,8 @@
 #include "hello.pb.h"
 #include "hello.grpc.pb.h"
 
+#include "hello-lib.h"
+#include <string>
 #include <grpc++/grpc++.h>
 
 using grpc::Channel;
@@ -13,6 +15,8 @@ using grpc::StatusCode;
 using helloworld::HelloRequest;
 using helloworld::HelloReply;
 using helloworld::Greeter;
+using hello::HelloLib;
+using std::string;
 
 class GreeterClient {
 
@@ -59,6 +63,12 @@ private:
 
 int main() {
         std::cout << "Main";
+	HelloLib lib("Hello");
+  string thing = "world";
+  if (argc > 1) {
+    thing = argv[1];
+  }
+  lib.greet(thing);
         GreeterClient greeter(grpc::CreateChannel(
         "localhost:50051", grpc::InsecureChannelCredentials()));
         std::string user("Atul");
