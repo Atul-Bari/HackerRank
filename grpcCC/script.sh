@@ -1,1 +1,0 @@
- gcc main.c -lgreet1 -pthread -lgrpc++_reflection -ldl -rdynamic -pthread -static-libstdc++  -lprotobuf -pthread -lz -lgrpc++ -Wl,-Bstatic -lgrpc  -lprotobuf  -lgrpc++ -llzma -Wl,-call_shared -lssl -lz -lcrypto  -lpthread -ldl -Wl,-Bsymbolic-functions -lstdc++ -lm -lcares -lgcc_s  -o main && echo "main generated"
