@@ -1,0 +1,19 @@
+git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
+cd grpc
+git submodule update --init
+cd third_party/protobuf
+git checkout master
+git pull origin master
+./autogen.sh
+./configure
+make -j4
+make install
+cd ../../
+make -j4
+make install && echo "OMG Its done"
+cd ..
+#rm -r grpc/ && echo "grpc src removed"
+cd /usr/local/lib/
+#rm libprotoc.a libgrpc++_error_details.a libgrpc++_alts.a libgrpc++_reflection.a libgrpc++_unsecure.a libupb.a
+#rm libprotobuf-lite.a libprotobuf.a libgrpc++.a libgrpc.a libgrpc_cronet.a libgrpc_unsecure.a libgrpcpp_channelz.a libaddress_sorting.a && echo "Extra lib removed"
+#Uncomment this rm, incase you are using only -shared libraries...
