@@ -17,3 +17,11 @@ cd /usr/local/lib/
 #rm libprotoc.a libgrpc++_error_details.a libgrpc++_alts.a libgrpc++_reflection.a libgrpc++_unsecure.a libupb.a
 #rm libprotobuf-lite.a libprotobuf.a libgrpc++.a libgrpc.a libgrpc_cronet.a libgrpc_unsecure.a libgrpcpp_channelz.a libaddress_sorting.a && echo "Extra lib removed"
 #Uncomment this rm, incase you are using only -shared libraries...
+
+//This is for gracefull restart
+echo "$1"
+var=`pidof $1`
+echo $var
+kill -SIGUSR2 $var
+sleep 1s
+kill -SIGQUIT $var
