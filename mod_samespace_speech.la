@@ -17,7 +17,7 @@ old_library=''
 inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=' -lspeechMod -L/usr/local/lib -lgrpc++ -lgrpc -lgpr -lcares /usr/local/lib/libprotobuf.la -lm /usr/local/src/freeswitch/libfreeswitch.la -L/usr/local/src/freeswitch/libs/apr-util/xml/expat/lib /usr/local/src/freeswitch/libs/apr-util/xml/expat/lib/libexpat.la /usr/local/src/freeswitch/libs/apr/libapr-1.la -lpthread /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/libsqlite3.la /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/libcurl.la -lpcre -lspeex -lspeexdsp -ledit -lncurses -lbsd -ldl -lcrypt -lrt -lz -lssl -lcrypto'
+dependency_libs=' -lspeechMod -L/usr/local/lib -lgrpc++ -lgrpc -lgpr -lcares /usr/local/lib/libprotobuf.la -lm /opt/samespace/media/freeswitch/lib/libfreeswitch.la -L/usr/local/src/freeswitch/libs/apr-util/xml/expat/lib /opt/samespace/media/freeswitch/lib/libexpat.la /opt/samespace/media/freeswitch/lib/libapr-1.la -lpthread /usr/lib/x86_64-linux-gnu/libsqlite3.la /usr/lib/x86_64-linux-gnu/libcurl.la -lpcre -lspeex -lspeexdsp -ledit -lncurses -lbsd -ldl -lcrypt -lrt -lz -lssl -lcrypto'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -28,7 +28,7 @@ age=0
 revision=0
 
 # Is this an already installed library?
-installed=no
+installed=yes
 
 # Should we warn about portability when linking against -modules?
 shouldnotlink=yes
@@ -39,4 +39,3 @@ dlpreopen=''
 
 # Directory that this library needs to be installed in:
 libdir='/opt/samespace/media/freeswitch/lib/freeswitch/mod'
-relink_command="(cd /usr/local/src/freeswitch/src/mod/asr_tts/mod_samespace_speech; /bin/bash \"/usr/local/src/freeswitch/libtool\"  --tag CC --mode=relink gcc -I. -I/usr/local/src/freeswitch/src/include -I/usr/local/src/freeswitch/src/include -I/usr/local/src/freeswitch/libs/libteletone/src -fPIC -ffast-math -Wno-unused-result -Wno-misleading-indentation -fvisibility=hidden -DSWITCH_API_VISIBILITY=1 -DCJSON_API_VISIBILITY=1 -DHAVE_VISIBILITY=1 -g -ggdb -DHAVE_OPENSSL -g -O2 -Wall -std=c99 -pedantic -Wdeclaration-after-statement -lspeechMod -pthread -I/usr/local/include -L/usr/local/lib -lgrpc++ -lgrpc -lgpr -lz -lcares -lssl -lcrypto -lprotobuf -D_GNU_SOURCE -lm -shared -module -avoid-version -rpath /opt/samespace/media/freeswitch/lib/freeswitch/mod -o mod_samespace_speech.la -shared -Xlinker -x mod_samespace_speech.lo /usr/local/src/freeswitch/libfreeswitch.la @inst_prefix_dir@)"
