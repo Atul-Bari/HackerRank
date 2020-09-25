@@ -17,7 +17,7 @@ old_library=''
 inherited_linker_flags=' -pthread'
 
 # Libraries that this one depends upon.
-dependency_libs=' -lspeechMod -L/usr/local/lib -lgrpc++ -lgrpc -lgpr -lcares /usr/local/lib/libprotobuf.la -lm /opt/samespace/media/freeswitch/lib/libfreeswitch.la -L/usr/local/src/freeswitch/libs/apr-util/xml/expat/lib /opt/samespace/media/freeswitch/lib/libexpat.la /opt/samespace/media/freeswitch/lib/libapr-1.la -lpthread /usr/lib/x86_64-linux-gnu/libsqlite3.la /usr/lib/x86_64-linux-gnu/libcurl.la -lpcre -lspeex -lspeexdsp -ledit -lncurses -lbsd -ldl -lcrypt -lrt -lz -lssl -lcrypto'
+dependency_libs=' -lspeechMod -L/usr/local/lib -lgrpc++ -lgrpc -lgpr /usr/local/lib/libprotobuf.la -lm /usr/local/freeswitch/lib/libfreeswitch.la -L/usr/local/src/freeswitch/libs/apr-util/xml/expat/lib /usr/local/freeswitch/lib/libexpat.la /usr/local/freeswitch/lib/libapr-1.la -lpthread /usr/lib/x86_64-linux-gnu/libsqlite3.la /usr/lib/x86_64-linux-gnu/libcurl.la -lpcre -lspeex -lspeexdsp -ledit -lncurses -lbsd -ldl -lcrypt -lrt -lz -lssl -lcrypto'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
